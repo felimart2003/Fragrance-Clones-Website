@@ -1,0 +1,119 @@
+@font-face {
+  font-family: 'Geist';
+  src: url('path-to-your-font/Geist.woff2') format('woff2');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'GeistSans', Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: black;
+width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url(assets/beach_house.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar {
+  width: 95vw;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 1.5rem;
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.logo {
+  width: 7.5rem;
+  cursor: pointer;
+  border-color: blue;
+}
+
+.navbar ul li::after {
+  content: "";
+  height: 0.2rem;
+  width: 0;
+  background: #009668;
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  transition: 500ms;
+}
+
+.navbar ul li:hover::after {
+  width: 100%;
+}
+
+.content {
+  width: 100vw;
+  padding: absolute;
+  top: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: #fff;
+}
+
+.content h1 {
+  font-size: 4.5rem;
+  margin-top: 5rem;
+}
+
+.content p {
+  margin: 1rem auto;
+  font-weight: 100;
+  line-height: 1.5rem;
+}
+
+button {
+  width: 15rem;
+  padding: 1rem 0;
+  text-align: center;
+  margin: 1.5rem 0.75rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  border: 0.1rem solid #009688;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+span {
+  background: #009688;
+  height: 100%;
+  width: 100%;
+  border-radius: 1.5rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 500ms;
+}
+
+button:hover span {
+  width: 100%;
+}
+
+button:hover {
+  border: none;
+}
