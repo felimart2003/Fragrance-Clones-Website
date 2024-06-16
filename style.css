@@ -1,17 +1,19 @@
 @font-face {
   font-family: 'Geist';
-  src: url('path-to-your-font/Geist.woff2') format('woff2');
+  src: url('assets/font/Geist-ttf/Geist-Regular.ttf') format('truetype'),
+  src: url('assets/font/Geist-woff/Geist-Regular.woff') format('woff'),
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'GeistSans', Arial, Helvetica, sans-serif;
+  font-family: 'Geist', Arial, Helvetica, sans-serif;
 }
 
 body {
   background-color: black;
-width: 100vw;
+  width: 100vw;
   height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url(assets/beach_house.jpg);
@@ -19,8 +21,26 @@ width: 100vw;
   background-position: center;
 }
 
+.footer {
+  background-color: rgb(0, 0, 0);
+  padding: 0.6rem;
+  padding-bottom: 1.2rem;
+  text-align: center;
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+}
+
+.footer p {
+  color: white;
+}
+
 .navbar {
-  width: 95vw;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9));
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  width: 100vw;
   margin: auto;
   padding: 0;
   display: flex;
@@ -28,26 +48,26 @@ width: 100vw;
   justify-content: space-between;
 }
 
-.navbar ul li {
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar__item {
   list-style: none;
-  display: inline-block;
   margin: 0 1.5rem;
   position: relative;
 }
 
-.navbar ul li a {
+.navbar__links {
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
 }
 
-.logo {
-  width: 7.5rem;
-  cursor: pointer;
-  border-color: blue;
-}
-
-.navbar ul li::after {
+.navbar__links::after {
   content: "";
   height: 0.2rem;
   width: 0;
@@ -55,23 +75,29 @@ width: 100vw;
   position: absolute;
   left: 0;
   bottom: -1rem;
-  transition: 500ms;
+  transition: width 500ms;
 }
 
-.navbar ul li:hover::after {
+.navbar__links:hover::after {
   width: 100%;
+}
+
+#logo {
+  width: 15rem;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
 
 .content {
   width: 100vw;
-  padding: absolute;
-  top: 0;
-
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-
   text-align: center;
   color: #fff;
+  padding: 2rem 0;
 }
 
 .content h1 {
@@ -96,18 +122,20 @@ button {
   background: transparent;
   color: #fff;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-span {
-  background: #009688;
-  height: 100%;
-  width: 100%;
-  border-radius: 1.5rem;
+button span {
   position: absolute;
+  top: 0;
   left: 0;
-  bottom: 0;
+  height: 100%;
+  width: 0;
+  background: #009688;
+  border-radius: 2rem;
+  transition: width 500ms;
   z-index: -1;
-  transition: 500ms;
 }
 
 button:hover span {
