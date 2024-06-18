@@ -48,11 +48,22 @@ body {
   justify-content: space-between;
 }
 
+.navbar__container {
+  display: flex;
+  align-items: center;
+  padding: 0 10rem;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
 .navbar__menu {
   display: flex;
   align-items: center;
   padding: 0;
   margin: 0;
+  right: 0;
+  position: absolute;
 }
 
 .navbar__item {
