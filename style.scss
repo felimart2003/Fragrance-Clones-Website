@@ -1,0 +1,231 @@
+@font-face {
+    font-family: 'Geist';
+    src: url('assets/font/Geist-ttf/Geist-Regular.ttf') format('truetype'),
+        url('assets/font/Geist-woff/Geist-Regular.woff') format('woff');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Geist', Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(assets/beach_house.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.footer {
+    background-color: rgb(0, 0, 0);
+    padding: 0.6rem;
+    padding-bottom: 1.2rem;
+    text-align: center;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+
+    p {
+        color: white;
+    }
+}
+
+.navbar {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9));
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    width: 100vw;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        padding: 1.5rem 7%;
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        &.active {
+            background: black;
+            top: 100%;
+            opacity: 1;
+            transition: all 0.8s ease;
+            z-index: 99;
+            height: 50vh;
+            font-size: 1.6rem;
+        }
+    }
+
+    &__item {
+        margin: 0 1.5rem;
+        width: 100%;
+    }
+
+    &__links {
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+
+        &::after {
+            content: "";
+            height: 0.2rem;
+            width: 0;
+            background: #009668;
+            position: absolute;
+            left: 0;
+            bottom: -1rem;
+            transition: width 500ms;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+
+    #logo {
+        height: 5rem;
+        cursor: pointer;
+        padding-left: 25px;
+    }
+
+    &__toggle {
+        .bar {
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.5s ease-in-out;
+            background: white;
+            display: block;
+            cursor: pointer;
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            &:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    }
+}
+
+.content {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 2rem 0;
+
+    h1 {
+        font-size: 4.5rem;
+        margin-top: 5rem;
+    }
+
+    p {
+        margin: 1rem auto;
+        font-weight: 100;
+        line-height: 1.5rem;
+    }
+
+    button {
+        width: 15rem;
+        padding: 1rem 0;
+        text-align: center;
+        margin: 1.5rem 0.75rem;
+        border-radius: 2rem;
+        font-weight: bold;
+        border: 0.1rem solid #009688;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background: #009688;
+            border-radius: 2rem;
+            transition: width 500ms;
+            z-index: -1;
+        }
+
+        &:hover {
+            border: none;
+
+            span {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .navbar__container {
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        /* Hide the popout menu */
+        opacity: 0;
+        transition: all 0.8s ease;
+        height: 50vh;
+        z-index: -1;
+
+        &.active {
+            background: black;
+            top: 100%;
+            opacity: 1;
+            transition: all 0.8s ease;
+            z-index: 99;
+            height: 50vh;
+            font-size: 1.6rem;
+        }
+    }
+
+    #logo {
+        padding-left: 25px;
+    }
+
+    .navbar__toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+}
