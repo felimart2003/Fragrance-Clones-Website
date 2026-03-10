@@ -1,28 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Felipe's Fragrance Masterlist</title>
+    <title>About | Felipe's Fragrance Masterlist</title>
     <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <!-- <h1>Welcome to Felipe's Fragrance Website</h1> -->
-    <div class="banner">
-      <nav>
-        <img src="assets/logo.png" class="logo" />
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="fragrances.html">Fragrances</a></li>
-          <li><a href="about.html">About</a></li>
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="index.html"><img src="assets/logo.png" id="logo" alt="Logo" /></a>
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu" id="nav-menu">
+          <li class="navbar__item">
+            <a href="index.html" class="navbar__links">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="fragrances.html" class="navbar__links">Fragrances</a>
+          </li>
+          <li class="navbar__item">
+            <a href="about.html" class="navbar__links">About</a>
+          </li>
         </ul>
-      </nav>
+      </div>
+    </nav>
 
-      <div class="content">
-        <h1>ABOUT ME</h1>
-        <p>I think I might have an obssesion with fragrances...</p>
+    <div class="content">
+      <h1>ABOUT</h1>
+      <p>I think I might have an obsession with fragrances...</p>
+    </div>
+
+    <div class="about-section">
+      <div class="about-section__block">
+        <h2>What Is This?</h2>
+        <p>This is a curated database of designer fragrances paired with their best affordable clones/dupes. Each clone is selected based on the highest-rated "Reminds Me Of" picks on Fragrantica.com — a community of millions of fragrance enthusiasts.</p>
+        <p>The goal is simple: smell amazing without breaking the bank.</p>
+      </div>
+
+      <div class="about-section__block">
+        <h2>How Clones Are Chosen</h2>
+        <p>For each designer fragrance, the clone listed is the one that the Fragrantica community has voted as the most similar. These aren't random picks — they're crowd-sourced from people who've actually smelled both the original and the dupe.</p>
+      </div>
+
+      <div class="about-section__block">
+        <h2>Popular Clone Houses</h2>
+        <ul>
+          <li><strong>Armaf</strong> — Known for spot-on clones of Creed and niche houses</li>
+          <li><strong>Lattafa</strong> — Middle Eastern house with incredible quality-to-price ratio</li>
+          <li><strong>Al Haramain</strong> — Premium clones that often rival the originals</li>
+          <li><strong>Zara</strong> — Surprisingly good dupes at high-street prices</li>
+          <li><strong>Afnan</strong> — Budget-friendly takes on popular designers</li>
+          <li><strong>Rasasi</strong> — Arabian perfumery with high-quality ingredients</li>
+        </ul>
+      </div>
+
+      <div class="about-section__block">
+        <h2>Disclaimer</h2>
+        <p>This site is not affiliated with Fragrantica.com or any fragrance brand. All fragrance names and brand names are trademarks of their respective owners. Clone recommendations are based on community opinions and may vary by batch and individual perception.</p>
       </div>
     </div>
-    <div id="fragranceData"></div>
-    <!-- <script src="https://apis.google.com/js/api.js"></script> !-->
+
+    <footer class="footer">
+      <p>&copy; Felipe's Fragrance Masterlist</p>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
