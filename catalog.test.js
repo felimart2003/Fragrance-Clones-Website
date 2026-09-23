@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {fragrances,filterFragrances} from './catalog.js';
+test('searches names, brands, references and notes',()=>{assert.equal(filterFragrances(fragrances,{q:'  AVENTUS '})[0].id,'club');assert.equal(filterFragrances(fragrances,{q:'lattafa'}).length,2);assert.equal(filterFragrances(fragrances,{q:'no such scent'}).length,0);});
+test('intersects family and shortlist',()=>assert.deepEqual(filterFragrances(fragrances,{family:'Sweet',savedOnly:true,saved:new Set(['club','9pm'])}).map(i=>i.id),['9pm']));
+test('unique IDs and HTTPS sources',()=>{assert.equal(new Set(fragrances.map(i=>i.id)).size,fragrances.length);fragrances.forEach(i=>assert.equal(new URL(i.source).protocol,'https:'));});
